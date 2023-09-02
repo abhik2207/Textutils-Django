@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>textutils.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <!--PART - 1 - a-->
+    <!--<h1>Home Page</h1>-->
+    <!--<button><a href="/about">About</a></button>-->
+    <!--<button><a href="/quote">Quote</a></button>-->
+    <!--<button><a href="/mostUsedLinks">Most Used Links</a></button>-->
+    <!--<button><a href="/gallery">Gallery</a></button>-->
+    <!--<button><a href="/services">Services</a></button>-->
+    <!--<button><a href="/contact">Contact</a></button>-->
+    <!--{{ name }} is from {{ place }}</h1>-->
+
+    <!--PART - 2-->
+<!--    Navbar-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Text Utils</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/about">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/contact">Contact us</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+<!--    Alert-->
+    <div class="container">
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Welcome to Text Utils!</strong> You can do anything with your text here
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+
+    <div class = "container">
+<!--        Form-->
+        <!-- <form action="/analyze" method="get">-->
+      <form action="/analyze" method="post"> {% csrf_token %}
+<!--        Textarea-->
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Enter your text here :</label>
+          <textarea name="textarea" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+        </div>
+<!--        Switches-->
+        <div class="form-check form-switch">
+          <input class="form-check-input" name='removepunctuation' type="checkbox" role="switch" id="flexSwitchCheckDefault1">
+          <label class="form-check-label" for="flexSwitchCheckDefault1"> Remove punctuations </label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" name='uppercase' type="checkbox" role="switch" id="flexSwitchCheckDefault2">
+          <label class="form-check-label" for="flexSwitchCheckDefault2"> Transform to uppercase </label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" name='lowercase' type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+          <label class="form-check-label" for="flexSwitchCheckDefault3"> Transform to lowercase </label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" name='capitalize' type="checkbox" role="switch" id="flexSwitchCheckDefault4">
+          <label class="form-check-label" for="flexSwitchCheckDefault4"> Capitalize </label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" name='removenewline' type="checkbox" role="switch" id="flexSwitchCheckDefault5">
+          <label class="form-check-label" for="flexSwitchCheckDefault5"> Remove new lines </label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" name='removeextraspace' type="checkbox" role="switch" id="flexSwitchCheckDefault6">
+          <label class="form-check-label" for="flexSwitchCheckDefault6"> Remove extra spaces </label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" name='countchacaters' type="checkbox" role="switch" id="flexSwitchCheckDefault7">
+          <label class="form-check-label" for="flexSwitchCheckDefault7"> Count characters </label>
+        </div>
+        <br>
+<!--        Button-->
+        <button type="submit" class="btn btn-dark">Analyze Text</button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <!-- Part - 1 - b-->
+    <!--<button><a href="/removepunctuation">removepunctuation</a></button>-->
+    <!--<button><a href="/capitalize">capitalize</a></button>-->
+    <!--<button><a href="/newlineremove">newlineremove</a></button>-->
+    <!--<button><a href="/spaceremove">spaceremove</a></button>-->
+    <!--<button><a href="/charcount">charcount</a></button>-->
+  </body>
+</html>
